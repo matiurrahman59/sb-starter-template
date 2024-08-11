@@ -1,0 +1,29 @@
+@use '../abstracts/' as *;
+
+html {
+  font-size: 50% !important;
+
+  @include mq(medium) {
+    /* This defines what 1rem is  */
+    font-size: 62.5% !important;
+    /* 1 rem = 10px; 10px/16px = 62.5% */
+  }
+}
+
+body {
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  font-size: $body-font-size;
+  color: $body-text-color;
+  background-color: $body-background-color;
+  line-height: $body-line-height;
+}
+/* 1em = 16px */
+
+a {
+  color: $link-color;
+}
+
+a:is(:hover, :focus) {
+  color: $link-color-hover;
+}

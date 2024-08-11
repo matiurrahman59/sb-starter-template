@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.space-y > *:where(:not(:first-child)) {
+  margin-top: var(--flow-spacer, 1em);
+}
+
+.space-x > *:where(:not(:first-child)) {
+  margin-left: var(--flow-spacer, 1em);
+}
+
+@each $size-name, $size-value in $sizes {
+  .space-y-#{$size-name} *:where(:not(:first-child)) {
+    margin-top: $size-value;
+  }
+
+  .space-x-#{$size-name} *:where(:not(:first-child)) {
+    margin-left: $size-value;
+  }
+}
